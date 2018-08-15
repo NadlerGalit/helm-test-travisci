@@ -1,0 +1,11 @@
+language: bash
+
+before_script:
+- echo ============================
+- echo Before script
+- echo ============================
+
+script:
+- echo ============================
+- echo My first ever TravisCI test!
+- echo ============================

@@ -1,3 +1,4 @@
+# This Dockerfile is to build the needed nsenter for Ubuntu 14.04, which is needed for helm
 FROM ubuntu:14.04
 
 RUN apt-get update && \

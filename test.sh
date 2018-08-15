@@ -167,10 +167,12 @@ testApplication () {
     waitForPod ${pod_name}
 
     echo "Port forward local 8080 to nginx pod"
-    bash -c "kubectl port-forward ${pod_name} 8080:80 &" #> /dev/null 2>&1
+    /bin/bash -c "kubectl port-forward ${pod_name} 8080:80 &"
 
-    local pid=$(ps -ef | grep port-forward | awk '{print $2}')
-    echo "Port forward running with pid ${pid}"
+    # Show running processes (debug)
+    echo -------
+    ps -ef | grep port-forward
+    echo -------
 
     echo "Pod is ready. Testing http code"
     local response_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)
@@ -183,8 +185,6 @@ testApplication () {
         echo "FAILED"
         RESULT=1
     fi
-
-    kill -9 ${pid}
 }
 
 ############## Main

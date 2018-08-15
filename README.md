@@ -34,6 +34,6 @@ The TravisCI test calls the `test.sh` script which
 - Deploys `demo` chart
 
 ## Thanks
-This repository is using examples from https://github.com/LiliC/travis-minikube.
-
-Thanks [Lili Cosic](https://github.com/LiliC)!
+This repository is using examples from
+- https://github.com/LiliC/travis-minikube. Thanks [Lili Cosic](https://github.com/LiliC)!
+- https://gist.github.com/mbn18/0d6ff5cb217c36419661 Thank [Michael Ben-Nes](https://gist.github.com/mbn18)

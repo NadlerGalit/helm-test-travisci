@@ -176,7 +176,7 @@ testApplication () {
 
     # A plain curl to the service to see output (debug)
     echo -----------
-    curl ${url}
+    curl -v ${url}
     echo -----------
 
     echo "Testing http code for ${url}"

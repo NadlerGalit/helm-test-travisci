@@ -154,28 +154,26 @@ deployChart () {
     title "Deploying helm chart"
 
     echo "Helm install"
-    helm upgrade --install demo ${SCRIPT_DIR}/demo || errorExit "helm install failed"
-}
-
-testApplication () {
-    title "Testing Demo application"
+    helm upgrade --install demo --set service.type=NodePort ${SCRIPT_DIR}/demo || errorExit "helm install failed"
 
     echo "Getting pod name"
     local pod_name=$(getPodName demo)
 
     echo "Waiting for pod ${pod_name}"
     waitForPod ${pod_name}
+}
 
-    echo "Port forward local 8080 to nginx pod"
-    /bin/bash -c "kubectl port-forward ${pod_name} 8080:80 &"
+testApplication () {
+    title "Testing Demo application"
 
-    # Show running processes (debug)
-    echo -------
-    ps -ef | grep port-forward
-    echo -------
+    echo "Getting node port for demo service"
+    local node_port=$(kubectl get svc demo -o=yaml | grep nodePort | awk '{print $2}')
 
-    echo "Pod is ready. Testing http code"
-    local response_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)
+    echo "Service demo node port is ${node_port}"
+
+    local url=http://localhost:${node_port}
+    echo "Testing http code for ${url}"
+    local response_code=$(curl -s -o /dev/null -w "%{http_code}" ${url})
 
     echo "Response code is ${response_code}"
     if [ "${response_code}" == 200 ]; then

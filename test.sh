@@ -161,6 +161,7 @@ deployChart () {
 
     echo "Waiting for pod ${pod_name}"
     waitForPod ${pod_name}
+    sleep 5
 }
 
 testApplication () {
@@ -175,6 +176,7 @@ testApplication () {
     local url=http://${node_ip}:${node_port}
 
     # A plain curl to the service to see output (debug)
+    echo "Verbose curl -v ${url}"
     echo -----------
     curl -v ${url}
     echo -----------
@@ -183,13 +185,13 @@ testApplication () {
     local response_code=$(curl -s -o /dev/null -w "%{http_code}" ${url})
 
     echo "Response code is ${response_code}"
-#    if [ "${response_code}" == 200 ]; then
-#        echo "SUCCESS"
-#        RESULT=0
-#    else
-#        echo "FAILED"
-#        RESULT=1
-#    fi
+    if [ "${response_code}" == 200 ]; then
+        echo "SUCCESS"
+        RESULT=0
+    else
+        echo "FAILED"
+        RESULT=1
+    fi
 }
 
 ############## Main

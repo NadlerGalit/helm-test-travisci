@@ -3,6 +3,6 @@ sudo: required
 
 before_install:
 - sudo apt-get update
-- sudo apt-get install -y socat
+- sudo apt-get install -y socat util-linux
 
 script: sudo bash test.sh

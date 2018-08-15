@@ -1,11 +1,4 @@
 language: bash
+sudo: required
 
-before_script:
-- echo ============================
-- echo Before script
-- echo ============================
-
-script:
-- echo ============================
-- echo My first ever TravisCI test!
-- echo ============================
+script: sudo bash test.sh

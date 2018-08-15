@@ -1,14 +1,22 @@
 # Helm Chart testing with TravisCI
-This repository is for testing a helm chart with TravisCI
+This repository is for testing a [helm](https://www.helm.sh/) chart with [TravisCI](https://travis-ci.org/)
 
-## Helm Chart
+## Requirements
+You must have a GitHub and TravisCI accounts. See [setup instructions](https://docs.travis-ci.com/user/getting-started/).
+
+## High level
+The two important parts of this repository are the `test.sh` script and `.travis.yml` file.
+- `test.sh` - this has all the test flow as a shell script
+- `.travis.yml` - this describes the test stages for travisCI
+
+## Demo Helm Chart
 The included helm chart is a default output of the `helm create demo` command that generates a simple nginx Helm CHart example.
 
 ## Running locally
-To run the tests locally, you should be running on Linux only!
+You run the tests locally, you should be running on Linux only!
 
 ### Vagrant for local testing
-If on another OS, you can use [vagrant](https://www.vagrantup.com/) to spin up an Ubuntu Linux VM.
+If on a non Linux OS (like Windows or Mac OS), you can use [vagrant](https://www.vagrantup.com/) to spin up an Ubuntu Linux VM.
 ```bash
 # Spin up the Ubuntu Linux VM
 $ vagrant up

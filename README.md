@@ -1,6 +1,9 @@
 # Helm Chart testing with TravisCI
 This repository is for testing a [helm](https://www.helm.sh/) chart with [TravisCI](https://travis-ci.org/)
 
+## TravisCI build status
+[![Build Status](https://travis-ci.org/eldada/helm-test-travisci.svg?branch=master)](https://travis-ci.org/eldada/helm-test-travisci)
+
 ## Requirements
 You must have a GitHub and TravisCI accounts. See [setup instructions](https://docs.travis-ci.com/user/getting-started/).
 

@@ -147,7 +147,7 @@ setupHelm () {
     echo "Waiting for pod ${pod_name}"
     waitForPod ${pod_name} kube-system
 
-    sleep 5
+    sleep 10
 }
 
 deployChart () {
@@ -161,6 +161,7 @@ deployChart () {
 
     echo "Waiting for pod ${pod_name}"
     waitForPod ${pod_name}
+
     sleep 5
 }
 

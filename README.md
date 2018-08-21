@@ -1,5 +1,5 @@
 # Helm Chart testing with TravisCI
-This repository is for testing a [helm](https://www.helm.sh/) chart with [TravisCI](https://travis-ci.org/)
+This repository is an example for testing a [helm](https://www.helm.sh/) chart with [TravisCI](https://travis-ci.org/)
 
 The testing is made up of two stages:
 1. Running a `helm lint` on the chart
@@ -17,7 +17,7 @@ The two important parts of this repository are the `test.sh` script and `.travis
 - `.travis.yml` - this describes the test stages for travisCI
 
 ## Demo Helm Chart
-The included helm chart is a default output of the `helm create demo` command that generates a simple nginx Helm Chart example.
+The included helm chart is a default output of the `helm create demo` command that generates a simple nginx Helm chart example.
 
 ## Running locally
 Local execution of the tests supports Linux only!

@@ -17,10 +17,10 @@ The two important parts of this repository are the `test.sh` script and `.travis
 - `.travis.yml` - this describes the test stages for travisCI
 
 ## Demo Helm Chart
-The included helm chart is a default output of the `helm create demo` command that generates a simple nginx Helm CHart example.
+The included helm chart is a default output of the `helm create demo` command that generates a simple nginx Helm Chart example.
 
 ## Running locally
-You run the tests locally, you should be running on Linux only!
+Local execution of the tests supports Linux only!
 
 ### Vagrant for local testing
 If on a non Linux OS (like Windows or Mac OS), you can use [vagrant](https://www.vagrantup.com/) to spin up an Ubuntu Linux VM.

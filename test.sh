@@ -7,7 +7,7 @@ RESULT=0
 export CHANGE_MINIKUBE_NONE_USER=true
 
 errorExit () {
-    echo; echo "ERROR: $1" | tee ${ERROR_FILE}; echo
+    echo; echo "ERROR: $1"
     exit 1
 }
 
